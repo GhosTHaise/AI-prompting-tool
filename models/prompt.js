@@ -8,13 +8,11 @@ const PromptSchema = new Schema({
     prompt : {
         type : String,
         required : [true , "Prompt is required."]
-    ,
+    },
     tag : {
         type : String,
         required : [true , "Prompt is required."]
     },
-
-}
 });
 
 const Prompt = models.prompt || new model("Prompt" ,PromptSchema)

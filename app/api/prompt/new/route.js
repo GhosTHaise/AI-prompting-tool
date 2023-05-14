@@ -21,6 +21,9 @@
             status : 201
         });
     } catch (error) {
-        
+        return new Response("Failed to craete a new prompt .",{
+            prompt : 500
+        });
+        console.log(error)
     }
 }
