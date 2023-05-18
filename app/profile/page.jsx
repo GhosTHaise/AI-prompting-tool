@@ -4,9 +4,9 @@ import { useState , useEffect } from 'react';
 import { useSession } from 'next-auth/react'; 
 import { useRouter } from 'next/router';
 
-import MyProfil from '@components/Profil';
+import Profil from '@components/Profil';
 
-const Profile = () => {
+const MyProfile = () => {
 
   const {data : session} = useSession();
   const [posts, setPosts] = useState([]);
@@ -35,7 +35,7 @@ const Profile = () => {
     }
 
   return (
-    <Profile
+    <Profil
         name="My"
         desc="Welcome to your personalized profil page"
         data={posts}
