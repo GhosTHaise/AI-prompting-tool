@@ -1,18 +1,18 @@
 "use client"
 
 import { useState , useEffect } from 'react';
-import { useSession } from 'next-auth/react'; 
 import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react'; 
+
 
 import Profil from '@components/Profil';
 
 const MyProfile = () => {
 
   const router = useRouter();
-
   const {data : session} = useSession();
   const [posts, setPosts] = useState([]);
-
+  
   useEffect(()=>{
     const fetchPosts = async ()=>{
       try {
