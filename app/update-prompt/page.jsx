@@ -7,6 +7,7 @@ import Form from '@components/Form';
 
 
 const UpdatePrompt = () => {
+    const router = useRouter();
     const searchParams = useSearchParams();
     const promptId = searchParams.get("id");
 
@@ -29,35 +30,36 @@ const UpdatePrompt = () => {
         if(promptId) getPromptDetails();
     }, [promptId]);
 
-   /*  const createPrompt = async (e) => {
+    const UpdatePrompt = async (e) => {
         e.preventDefault();
-
         setSubmitting(true);
+
+        if(!promptId) return alert("Prompt Id Not Found !")
         try {
-            const response = await fetch("/api/prompt/new",{
-                method : "POST",
+            const response = await fetch(`/api/prompt/${promptId}`,{
+                method : "PATCH",
                 body : JSON.stringify({
                     prompt : post.prompt,
-                    userId : session?.user.id,
                     tag : post.tag
                 })
             });
 
             if(response.ok){
-                router.push("/");
+                router.push("/profile");
             }
         } catch (error) {
             console.log(error);
         } finally {
             setSubmitting(false);
         }
-    } */
+    }
+
   return <Form
-        type="Create"
+        type="Edit"
         post={post}
         setPost={setPost}
         submitting={submitting}
-        handleSubmit={() => {}}
+        handleSubmit={UpdatePrompt}
     />
     
 }
