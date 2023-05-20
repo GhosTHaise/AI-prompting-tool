@@ -30,7 +30,7 @@ const Form = ({
                   Your AI Prompt
                 </span>
                 <textarea
-                  value={post.pompt}
+                  value={post.prompt}
                   onChange={(e) => setPost(
                   { 
                     ...post , 

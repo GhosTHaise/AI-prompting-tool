@@ -6,8 +6,7 @@ import { useRouter , useSearchParams} from 'next/navigation';
 import Form from '@components/Form';
 
 
-const EditPrompt = () => {
-    const router = useRouter();
+const UpdatePrompt = () => {
     const searchParams = useSearchParams();
     const promptId = searchParams.get("id");
 
@@ -21,7 +20,7 @@ const EditPrompt = () => {
         const getPromptDetails = async () => {
             const response = await fetch(`/api/prompt/${promptId}`);
             const data = await response.json();
-
+            console.log(data);
             setPost({
                 prompt : data.prompt,
                 tag : data.tag
@@ -63,4 +62,4 @@ const EditPrompt = () => {
     
 }
 
-export default EditPrompt
+export default UpdatePrompt
