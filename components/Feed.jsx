@@ -47,7 +47,7 @@ const Feed = () => {
     setSearchTimeout(
       setTimeout(()=>{
         const searchedResult = filterPrompts(searchText);
-        console.log("I search : ",searchedResult);
+        //console.log("I search : ",searchedResult);
         setSearchedResults(searchedResult);
       },500)
     )
