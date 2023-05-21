@@ -55,8 +55,8 @@ const Feed = () => {
 
   const handleTagClick  = (tagname) => {
     setSearchText(tagname);
-    
-    const searchResult = filterPrompts(searchText);
+    const searchResult = filterPrompts(tagname);
+    console.log(searchText,searchResult)
     setSearchedResults(searchResult);
   }
   useEffect(()=>{
