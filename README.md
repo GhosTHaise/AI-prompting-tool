@@ -18,6 +18,8 @@ yarn dev
 # or
 pnpm dev
 ```
+preview : 
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -34,4 +36,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-This is an important thing that you should know about NextJs forlder struct : [NextJs struct](https://nextjs.org/docs/getting-started/project-structure)
+This is an URL that contains important things , you should know about NextJs folder struct : [NextJs struct](https://nextjs.org/docs/getting-started/project-structure)
