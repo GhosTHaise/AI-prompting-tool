@@ -1,4 +1,4 @@
-#Ai Prompting Tool : Promptopia
+## Ai Prompting Tool : Promptopia
 
 >Dependencies
 ```shell
@@ -18,9 +18,12 @@ yarn dev
 # or
 pnpm dev
 ```
-preview : 
+>preview : 
+![ai-prompt-tool-image](https://arweave.net/CJJKkN3Oo1GNTrMxabTEyyyqs5GbMg93diqAAQaLpV0)
 
+You can use it as you wish on : [Promptoptia.com App LInk](https://ai-prompting-tool.vercel.app/)
 
+## 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
