@@ -27,7 +27,7 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   //Regexp for search
-  const filterSearch = (searchText) => {
+  const filterPrompts = (searchText) => {
       const regexp = new RegExp(searchText,"i");//ignore sensitive case
 
       return posts.filter(
@@ -42,18 +42,22 @@ const Feed = () => {
   const handleSearchChange = (e) => {
     if(searchTimeout) clearTimeout(searchTimeout);
     setSearchText(e.target.value);
-
+    
     //debounce method
     setSearchTimeout(
       setTimeout(()=>{
-        const searchedResult = filterSearch(posts);
+        const searchedResult = filterPrompts(searchText);
+        console.log("I search : ",searchedResult);
         setSearchedResults(searchedResult);
       },500)
     )
   };
 
-  const handleTagClick  = () => {
+  const handleTagClick  = (tagname) => {
+    setSearchText(tagname);
     
+    const searchResult = filterPrompts(searchText);
+    setSearchedResults(searchResult);
   }
   useEffect(()=>{
     const fetchPosts = async ()=>{
@@ -82,10 +86,18 @@ const Feed = () => {
           />
       </form>
     
-    <PromptCardList
-      data={posts}
-      handleTagClick={() => {}}
-    />
+    {
+      searchText ?
+        <PromptCardList
+        data={searchedResults}
+        handleTagClick={handleTagClick}
+        /> 
+          :
+        <PromptCardList
+          data={posts}
+          handleTagClick={handleTagClick}
+        />
+    }
     </section>
   )
 }
